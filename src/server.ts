@@ -16,7 +16,8 @@ const start = async () => {
     await app.register(routes); // Estou registrando a rota criada no Servidor!
     
     try {
-        await app.listen({ port: 9001 })
+        const port: number = parseInt(process.env.PORT || '3333')
+        await app.listen({ port })
     } catch(err) {
         process.exit(1)
     }
