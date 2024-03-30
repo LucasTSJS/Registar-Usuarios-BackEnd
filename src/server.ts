@@ -16,7 +16,7 @@ const start = async () => {
     await app.register(routes); // Estou registrando a rota criada no Servidor!
     
     try {
-        await app.listen(process.env.PORT as FastifyListenOptions)
+        await app.listen({ port: parseInt(process.env.PORT as string)})
     } catch(err) {
         process.exit(1)
     }
