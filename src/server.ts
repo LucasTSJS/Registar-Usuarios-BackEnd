@@ -12,8 +12,10 @@ app.setErrorHandler((error, request, reply) => {
 })
 const start = async () => {
 
-    await app.register(cors)
+    
     await app.register(routes); // Estou registrando a rota criada no Servidor!
+    await app.register(cors)
+
     
     try {
         const port: number = parseInt(process.env.PORT || '3333')

@@ -10,7 +10,7 @@ class CreateCustomerController {
         const { name, email } = request.body as { name: string, email: string }; // nome e email que são necessários no cadastro via POST
 
         const customerService = new CreateCustomerService()
-        const customer = await customerService.execute({name, email})
+        const customer = await customerService.execute({ name, email })
 
         reply.send(customer) // É o retorno no Insomnia de uma requisição feita via POST. Neste caso ela retorna o customer
     }
